@@ -1,6 +1,7 @@
 import Layout from '../components/layout'
-import LocationsBar from '../components/locations-bar'
+import {LocationsBar} from '../components/locations-bar'
 import {Home} from './home'
+
 
 export default function Index() {
   return (

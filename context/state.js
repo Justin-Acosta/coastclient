@@ -1,34 +1,35 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getUserProfile } from '../data/auth';
+import { getPlayer } from '../data/player.js';
 import { useRouter } from "next/router"
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [profile, setProfile] = useState({})
-  const [token, setToken] = useState("")
-  const router = useRouter()
 
-  useEffect(() => {
-    setToken(localStorage.getItem('token'))
-  }, [])
-
-  useEffect(() => {
-    const authRoutes = ['/login', '/register']
-    if (token) {
-      localStorage.setItem('token', token)
-      if (authRoutes.includes(router.pathname)) {
-        getUserProfile().then((profileData) => {
-          if (profileData) {
-            setProfile(profileData)
-          }
-        })
+    const [player, setPlayer] = useState({})
+    const [token, setToken] = useState("")
+    const router = useRouter()
+  
+    useEffect(() => {
+      setToken(localStorage.getItem('token'))
+    }, [])
+  
+    useEffect(() => {
+      const authRoutes = ['/login', '/register']
+      if (token) {
+        localStorage.setItem('token', token)
+        if (authRoutes.includes(router.pathname)) {
+          getPlayer().then((playerData) => {
+            if (playerData) {
+              setPlayer(playerData)
+            }
+          })
+        }
       }
-    }
-  }, [token])
+    }, [token])
 
   return (
-    <AppContext.Provider value={{ profile, token, setToken, setProfile }}>
+    <AppContext.Provider value={{ player, token, setToken, setPlayer }}>
       {children}
     </AppContext.Provider>
   );

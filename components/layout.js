@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <AppWrapper>
       <>
         <Head>
-          <title>Bangazon</title>
+          <title>Coast</title>
         </Head>
         <main className="container">{children}</main>
       </>

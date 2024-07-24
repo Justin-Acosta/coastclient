@@ -1,0 +1,19 @@
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(39, 38, 38);
+    display: flex;
+}
+
+.container {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(39, 38, 38);
+    display: flex;
+}
+
+#__next {
+    width: 100%
+}
