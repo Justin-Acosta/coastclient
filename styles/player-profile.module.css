@@ -1,0 +1,14 @@
+.profileContainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+
+    .profile {
+        margin-right: 2.5vh;
+        margin-top: 2.5vh;
+        width: 15rem;
+        height: 5rem;
+        background-color: rgba(202, 129, 129,.5);
+    }
+}

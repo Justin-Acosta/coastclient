@@ -1,8 +1,13 @@
-/* @font-face {
-    font-family: "pixel_digivolve";
-    src: url("../fonts/pixel_digivolve/pixel_digivolve") format('otf');
-  }
+@font-face {
+    font-family: 'pixel_digivolve';
+    src: url('../fonts/pixel_digivolve/pixel_digivolve.otf') format('opentype');
+
+}
 
 .title {
-    font-family: "pixel_digivolve";
-} */
+    color: white;
+    font-family: 'pixel_digivolve';
+    font-size: 20vh;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    margin-top: 10vh;
+}

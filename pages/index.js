@@ -1,18 +1,18 @@
+import { useAppContext } from '@/context/state.js'
 import Layout from '../components/layout'
-import {LocationsBar} from '../components/locations-bar'
 import {Home} from './home'
+import { useState,useEffect } from 'react'
 
 
 export default function Index() {
   return (
-    <Home />
+    <Home/>
   )
 }
 
 Index.getLayout = function getLayout(page) {
   return (
     <Layout>
-      <LocationsBar />
       {page}
     </Layout>
   )
