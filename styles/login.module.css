@@ -10,8 +10,9 @@
 
 .loginForm{
     background-color: rgba(255, 255, 255, 0.5);
+    position:absolute;
     width: 50%;
-    height: 76%;
+
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -19,6 +20,7 @@
     align-items: center;
     text-align: center;
     padding-bottom: 2%;
+    margin-top: 32vh;
 
     .fieldset {
         margin-top: auto;

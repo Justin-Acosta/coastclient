@@ -1,19 +1,40 @@
-import { useAppContext } from '@/context/state.js'
+import { AppWrapper, useAppContext } from '@/context/state.js'
 import Layout from '../components/layout'
-import {Home} from './home'
-import { useState,useEffect } from 'react'
+import {Home} from './home.js'
+import { LocationsBar } from '@/components/locations-bar.js'
+import { Items } from '@/components/items.js'
+import { Background } from './background.js'
+
+
 
 
 export default function Index() {
+
   return (
-    <Home/>
+    <Home />
   )
 }
 
 Index.getLayout = function getLayout(page) {
+
+
+  if(true) {
+    console.log('fart')
+  }
   return (
+
     <Layout>
-      {page}
+                <Background/>
+                <LocationsBar />
+                <div className='rightContainer'>
+                    <div className='mainContainer'>
+                    {page}
+                    </div>
+                    <Items />
+                </div>
+
     </Layout>
+
+
   )
 }

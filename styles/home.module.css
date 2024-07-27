@@ -9,3 +9,13 @@
     display:flex;
     z-index: 1;
 }
+
+.title {
+    color: white;
+    font-family: 'pixel_digivolve';
+    font-size: 20vh;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    margin-top: 10vh;
+    position:absolute;
+    z-index: 2;
+}

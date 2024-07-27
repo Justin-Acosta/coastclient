@@ -1,0 +1,10 @@
+.locationBackground {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:0 80%;
+    display:flex;
+    z-index: 1;
+}

@@ -1,35 +1,70 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { getPlayer } from '../data/player.js';
+import { getPlayer, updatePlayer, getTackleBox, getPlayerInventory } from '../data/player.js';
+import { getLocations } from '../data/locations.js'
+import { getShopInventory } from '../data/shop.js'
 import { useRouter } from "next/router"
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
 
-    const [player, setPlayer] = useState({})
-    const [token, setToken] = useState("")
-    const router = useRouter()
+  const [token, setToken] = useState("")
+  const [player, setPlayer] = useState({})
+  const [tackleBox, setTackleBox] = useState([])
+  const [playerInventory, setPlayerInventory] = useState([])
+  const [shopInventory, setShopInventory] = useState([])
+  const [locations, setLocations] = useState([])
+  const router = useRouter()
+
+  useEffect(() => {
+    setToken(localStorage.getItem('token'))
+  }, [])
+
+  useEffect(() => {
+    if (token) {
+      getPlayer().then((res) => setPlayer(res))
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (token) {
+      getTackleBox().then((res) => setTackleBox(res))
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (token) {
+      getPlayerInventory().then((res) => setPlayerInventory(res))
+    }
+  }, [token])
   
-    useEffect(() => {
-      setToken(localStorage.getItem('token'))
-    }, [])
-  
-    useEffect(() => {
-      const authRoutes = ['/login', '/register']
-      if (token) {
-        localStorage.setItem('token', token)
-        if (authRoutes.includes(router.pathname)) {
-          getPlayer().then((playerData) => {
-            if (playerData) {
-              setPlayer(playerData)
-            }
-          })
-        }
-      }
-    }, [token])
+  useEffect(() => {
+    if (token) {
+      getShopInventory().then((res) => setShopInventory(res))
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (token) {
+      getLocations().then((res) => setLocations(res))
+    }
+  }, [token])
 
   return (
-    <AppContext.Provider value={{ player, token, setToken, setPlayer }}>
+    <AppContext.Provider value={{ 
+      token, 
+      player, 
+      tackleBox, 
+      playerInventory, 
+      shopInventory, 
+      locations, 
+      setToken, 
+      setPlayer,
+      setTackleBox,
+      setPlayerInventory,
+      setShopInventory,
+      setLocations
+    }}>
       {children}
     </AppContext.Provider>
   );

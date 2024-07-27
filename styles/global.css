@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'pixel_digivolve';
+    src: url('../fonts/pixel_digivolve/pixel_digivolve.otf') format('opentype');
+}
 
 body {
     height: 100vh;
@@ -14,6 +17,7 @@ fieldset {
 button {
     width: 8rem;
     height: 3rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -21,8 +25,9 @@ h3 {
 }
 
 input {
-    width: 100%;
+    width: 80%;
     height: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .container {
@@ -51,4 +56,29 @@ input {
         height: 100%;
 
     }
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.homeBackground {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url('http://localhost:8000/media/location/title.gif');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    z-index: 1;
 }

@@ -1,0 +1,10 @@
+.backgroundContainer {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: url('http://localhost:8000/media/location/title.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    position:fixed;
+}
