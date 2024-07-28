@@ -2,6 +2,7 @@ import styles from '../../../styles/location.module.css'
 import { LocationsBar } from '../../../components/locations-bar.js'
 import { Items } from '../../../components/items.js'
 import { PlayerProfile } from '../../../components/profile.js';
+import { Background } from '@/pages/background.js';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../../../context/state.js';
 import { Router, useRouter } from 'next/router'
@@ -13,30 +14,16 @@ export default function Location() {
     const router = useRouter()
     const { id } = router.query
 
-    const { token, locations,player,setPlayer } = useAppContext()
-
-    const [currentLocation, setCurrentLocation] = useState({})
+    const { token, locations, player, setPlayer,setCurrentLocation } = useAppContext()
 
     useEffect(() => {
-        if (token && locations) {
-            const foundLocation = locations.find((location) => location.id == id)
-            setCurrentLocation(foundLocation)
-            setPlayer({...player, location: foundLocation.id})
-        }
-    }, [locations])
+        setCurrentLocation(id)  
+      },[])
 
     if (token) {
 
         return (
-
-
-                <div className='rightContainer'>
-                    <div className='mainContainer'>
-                        <PlayerProfile />
-                    </div>
-
-                </div>
-
+            <div className='locationContainer'></div>
         )
     }
 }
@@ -44,15 +31,18 @@ export default function Location() {
 Location.getLayout = function getLayout(page) {
     return (
         <Layout>
-            <div className='homeBackground'>
-                <LocationsBar />
-                <div className='rightContainer'>
-                    <div className='mainContainer'>
-                        {page}
-                    </div>
-                    <Items />
+            <Background />
+            <LocationsBar />
+            <div className='rightContainer'>
+                <div className='mainContainer'>
+
+                    <PlayerProfile />
+                    {page}
+
                 </div>
+                <Items />
             </div>
+
         </Layout>
     )
 }

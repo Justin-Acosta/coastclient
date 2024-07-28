@@ -6,9 +6,9 @@ export default function Coast({ Component, pageProps }) {
     const getLayout = Component.getLayout || ((page) => page)
   
     return getLayout(
-      <AppWrapper>
+      <>
         <Component {...pageProps} />
-      </AppWrapper>
+      </>
     )
   }
 

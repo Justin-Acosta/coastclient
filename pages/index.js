@@ -1,9 +1,10 @@
 import { AppWrapper, useAppContext } from '@/context/state.js'
 import Layout from '../components/layout'
-import {Home} from './home.js'
+import { Home } from './home.js'
 import { LocationsBar } from '@/components/locations-bar.js'
 import { Items } from '@/components/items.js'
 import { Background } from './background.js'
+import { PlayerProfile } from '@/components/profile.js'
 
 
 
@@ -18,20 +19,23 @@ export default function Index() {
 Index.getLayout = function getLayout(page) {
 
 
-  if(true) {
+  if (true) {
     console.log('fart')
   }
   return (
 
     <Layout>
-                <Background/>
-                <LocationsBar />
-                <div className='rightContainer'>
-                    <div className='mainContainer'>
-                    {page}
-                    </div>
-                    <Items />
-                </div>
+      <Background />
+      <LocationsBar />
+      <div className='rightContainer'>
+        <div className='mainContainer'>
+
+          <PlayerProfile />
+          {page}
+
+        </div>
+        <Items />
+      </div>
 
     </Layout>
 

@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    z-index: 3;
+    z-index: 5;
 
     .profile {
         display: flex;
@@ -21,6 +21,7 @@
             background-size: 100% 100%;
             border-radius: 4rem;
             margin-left: auto;
+            border: solid rgb(255, 48, 96) .2rem;
         }
 
         .nickname {

@@ -14,6 +14,7 @@ export function AppWrapper({ children }) {
   const [playerInventory, setPlayerInventory] = useState([])
   const [shopInventory, setShopInventory] = useState([])
   const [locations, setLocations] = useState([])
+  const [currentLocation, setCurrentLocation] = useState('')
   const router = useRouter()
 
   useEffect(() => {
@@ -58,12 +59,14 @@ export function AppWrapper({ children }) {
       playerInventory, 
       shopInventory, 
       locations, 
+      currentLocation,
       setToken, 
       setPlayer,
       setTackleBox,
       setPlayerInventory,
       setShopInventory,
-      setLocations
+      setLocations,
+      setCurrentLocation
     }}>
       {children}
     </AppContext.Provider>

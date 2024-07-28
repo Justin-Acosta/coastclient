@@ -2,6 +2,7 @@ import styles from '../styles/shop.module.css'
 import { LocationsBar } from '../components/locations-bar.js'
 import { Items } from '../components/items.js'
 import { PlayerProfile } from '../components/profile.js';
+import { Background } from './background.js';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../context/state.js';
 import { Router, useRouter } from 'next/router'
@@ -12,17 +13,16 @@ export default function Shop() {
 
     const router = useRouter()
 
-    const { token } = useAppContext()
+    const { token,setCurrentLocation } = useAppContext()
+
+    useEffect(() => {
+        setCurrentLocation('shop')  
+      },[])
 
     if (token) {
 
         return (
-                <div className='rightContainer'>
-                    <div className='mainContainer'>
-                        <PlayerProfile />
-                    </div>
-
-                </div>
+            <div className='shopContainer'></div>
         )
     }
 }
@@ -30,15 +30,18 @@ export default function Shop() {
 Shop.getLayout = function getLayout(page) {
     return (
         <Layout>
-            <div className='homeBackground'>
-                <LocationsBar />
-                <div className='rightContainer'>
-                    <div className='mainContainer'>
-                        {page}
-                    </div>
-                    <Items />
+            <Background />
+            <LocationsBar />
+            <div className='rightContainer'>
+                <div className='mainContainer'>
+
+                    <PlayerProfile />
+                    {page}
+
                 </div>
+                <Items />
             </div>
+
         </Layout>
     )
 }

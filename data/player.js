@@ -10,14 +10,14 @@ export function getPlayer() {
 
 export function updatePlayer(playerObject) {
 
-  playerRequestObject = {
+  const playerRequestObject = {
     nickname: playerObject.nickname,
     location: playerObject.location,
     wallet: playerObject.wallet,
     bait: playerObject.bait
   }
 
-  return fetchWithResponse(`player`, {
+  return fetchWithResponse(`players/${playerObject.id}`, {
     method: 'PUT',
     headers: {
       Authorization: `Token ${localStorage.getItem('token')}`,

@@ -6,7 +6,11 @@ export const Items = () => {
 
     const { token } = useAppContext()
 
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    useEffect(() => {
+        { token ? setIsExpanded(true) : setIsExpanded(false) }
+    }, [token])
 
     const toggleExpansion = () => {
             setIsExpanded(!isExpanded);
