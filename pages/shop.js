@@ -5,15 +5,17 @@ import { PlayerProfile } from '../components/profile.js';
 import { Background } from './background.js';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../context/state.js';
-import { Router, useRouter } from 'next/router'
-import Login from '@/components/login.js';
+import { useRouter } from 'next/router'
 import Layout from '@/components/layout.js';
+import { PlayerInventory } from '@/components/player-inventory.js';
+import { TackleBox } from '@/components/tackle-box.js';
+import { ShopModal } from '@/components/shop-modal.js';
 
 export default function Shop() {
 
     const router = useRouter()
 
-    const { token,setCurrentLocation } = useAppContext()
+    const { token,setCurrentLocation,showPlayerInventory,showTackleBox } = useAppContext()
 
     useEffect(() => {
         setCurrentLocation('shop')  
@@ -22,7 +24,11 @@ export default function Shop() {
     if (token) {
 
         return (
-            <div className='shopContainer'></div>
+            <div className={styles.shopContainer}>
+                {showPlayerInventory || showTackleBox? <></> : <ShopModal/>}
+                {showPlayerInventory ? <PlayerInventory/>: <></>}
+                {showTackleBox ? <TackleBox/>: <></>}
+            </div>
         )
     }
 }

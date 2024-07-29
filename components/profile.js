@@ -9,7 +9,7 @@ export const PlayerProfile = () => {
 
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const { token,setToken, player,setPlayer } = useAppContext()
+    const { token, setToken, player, setPlayer,currentBait } = useAppContext()
 
     const toggleExpansion = () => {
         setIsExpanded(!isExpanded);
@@ -29,9 +29,21 @@ export const PlayerProfile = () => {
     if (token) {
         return (
             <div className={styles.profileContainer} >
+
+                {currentBait ? <div className={styles.box}>
+                    <div className={styles.name}>
+                        <div>{currentBait.bait?.name}</div>
+                        <div>{currentBait.quantity}</div>
+                    </div>
+                    <div
+                        className={styles.image}
+                        style={{ backgroundImage: `url('http://localhost:8000/${currentBait.bait?.image}')` }}
+                    ></div>
+                </div> : <></>}
+
                 <div className={styles.profile} onClick={toggleExpansion}>
                     <div className={styles.image} style={{ backgroundImage: `url('${player.image}')` }}></div>
-                    <div className={styles.nickname}>{player.nickname}</div>
+                    <div className={styles.nickname}>{player.nickname} - ${player.wallet}</div>
                 </div>
                 <div className={`${styles.profileDropDown} ${isExpanded ? styles.expanded : styles.collapsed}`} >
                     <h3>Nickname:</h3>

@@ -1,10 +1,11 @@
 import styles from '../styles/items.module.css'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useAppContext } from '@/context/state.js'
+import { PlayerInventory } from './player-inventory.js'
 
 export const Items = () => {
 
-    const { token } = useAppContext()
+    const { token, showPlayerInventory, setShowPlayerInventory, showTackleBox, setShowTackleBox, currentBait } = useAppContext()
 
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -13,8 +14,22 @@ export const Items = () => {
     }, [token])
 
     const toggleExpansion = () => {
-            setIsExpanded(!isExpanded);
+        setIsExpanded(!isExpanded);
     };
+
+    const toggleShowPlayerInventory = () => {
+        if (showTackleBox) {
+            setShowTackleBox(false)
+        }
+        setShowPlayerInventory(!showPlayerInventory)
+    }
+
+    const toggleShowTackleBox = () => {
+        if (showPlayerInventory) {
+            setShowPlayerInventory(false)
+        }
+        setShowTackleBox(!showTackleBox)
+    }
 
     return (
         <div className={styles.itemsContainer}>
@@ -26,13 +41,13 @@ export const Items = () => {
                 </div>
 
                 <div className={styles.itemBoxContainer}>
-                    <div className={`${styles.itemBox} ${styles.tackleBox}`}>
+                    <div className={`${styles.itemBox} ${styles.tackleBox}`} onClick={toggleShowTackleBox}>
                         <div
                             className={styles.image}
                             style={{ backgroundImage: `url('http://localhost:8000/media/box/tackle-box.jpg')` }}
                         ></div>
                     </div>
-                    <div className={`${styles.itemBox} ${styles.tackleBox}`}>
+                    <div className={`${styles.itemBox} ${styles.tackleBox}`} onClick={toggleShowPlayerInventory}>
                         <div
                             className={styles.image}
                             style={{ backgroundImage: `url('http://localhost:8000/media/box/player-inventory.jpg')` }}

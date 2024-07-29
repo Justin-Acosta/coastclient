@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { getPlayer, updatePlayer, getTackleBox, getPlayerInventory } from '../data/player.js';
 import { getLocations } from '../data/locations.js'
 import { getShopInventory } from '../data/shop.js'
+import { getFishTypes } from '@/data/fish-types.js';
 import { useRouter } from "next/router"
 
 const AppContext = createContext();
@@ -14,7 +15,12 @@ export function AppWrapper({ children }) {
   const [playerInventory, setPlayerInventory] = useState([])
   const [shopInventory, setShopInventory] = useState([])
   const [locations, setLocations] = useState([])
+  const [fishTypes, setFishTypes] = useState([])
   const [currentLocation, setCurrentLocation] = useState('')
+  const [currentBait,setCurrentBait] = useState(0)
+  const [showTackleBox,setShowTackleBox] = useState(false)
+  const [showPlayerInventory,setShowPlayerInventory] = useState(false)
+
   const router = useRouter()
 
   useEffect(() => {
@@ -51,6 +57,12 @@ export function AppWrapper({ children }) {
     }
   }, [token])
 
+  useEffect(() => {
+    if (token) {
+      getFishTypes().then((res) => setFishTypes(res))
+    }
+  }, [token])
+
   return (
     <AppContext.Provider value={{ 
       token, 
@@ -59,14 +71,23 @@ export function AppWrapper({ children }) {
       playerInventory, 
       shopInventory, 
       locations, 
+      fishTypes,
       currentLocation,
+      currentBait,
+      tackleBox,
+      showTackleBox,
+      showPlayerInventory,
       setToken, 
       setPlayer,
       setTackleBox,
       setPlayerInventory,
       setShopInventory,
       setLocations,
-      setCurrentLocation
+      setFishTypes,
+      setCurrentLocation,
+      setCurrentBait,
+      setShowTackleBox,
+      setShowPlayerInventory
     }}>
       {children}
     </AppContext.Provider>

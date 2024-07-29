@@ -8,13 +8,15 @@ import { useAppContext } from '../../../context/state.js';
 import { Router, useRouter } from 'next/router'
 import Login from '@/components/login.js';
 import Layout from '@/components/layout.js';
+import { PlayerInventory } from '@/components/player-inventory.js';
+import { TackleBox } from '@/components/tackle-box.js';
 
 export default function Location() {
 
     const router = useRouter()
     const { id } = router.query
 
-    const { token, locations, player, setPlayer,setCurrentLocation } = useAppContext()
+    const { token, currentLocation, setCurrentLocation,showPlayerInventory,showTackleBox } = useAppContext()
 
     useEffect(() => {
         setCurrentLocation(id)  
@@ -23,7 +25,10 @@ export default function Location() {
     if (token) {
 
         return (
-            <div className='locationContainer'></div>
+            <div className={styles.locationContainer}>
+                {showPlayerInventory ? <PlayerInventory/>: <></>}
+                {showTackleBox ? <TackleBox/>: <></>}
+            </div>
         )
     }
 }
