@@ -30,18 +30,19 @@ export const TackleBox = () => {
 
     const rigBait = () => {
         setCurrentBait(selectedBait)
+        setShowTackleBox(false)
     }
 
     return (
         <div className='modalWindow'>
 
             <div></div>
-            <div className={styles.topBar}>
+            <div className={styles.topBar}> 
                 <div className={styles.exit} onClick={toggleShowTackleBox}>✖</div>
             </div>
 
             <div className={styles.displayArea}>
-                {tackleBox.map((bait) => 
+                {tackleBox?.map((bait) => 
                     <div className={styles.box} key={bait.bait.id} id={bait.bait.id} onClick={selectBait}>
                         <div className={styles.name}>
                             <div>{bait.bait.name}</div>

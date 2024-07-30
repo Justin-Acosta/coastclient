@@ -10,6 +10,7 @@ export function getLocations() {
 
 export function catchFish(object) {
     return fetchWithResponse(`locations/catch_fish`, {
+        method: "POST",
         headers: {
             Authorization: `Token ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'

@@ -11,7 +11,7 @@ export const ShopModal = () => {
     const [showBuy, setShowBuy] = useState(true)
     const [showSell, setShowSell] = useState(false)
 
-    const { shopInventory,tackleBox, setTackleBox, playerInventory, setPlayerInventory, setPlayer } = useAppContext()
+    const { shopInventory,tackleBox, setTackleBox, playerInventory, setPlayerInventory, setPlayer, player } = useAppContext()
 
     const selectBait = (e) => {
         const foundBait = shopInventory.find((bait) => bait.bait.id === parseInt(e.currentTarget.id))
@@ -39,6 +39,7 @@ export const ShopModal = () => {
     }
 
     const buy = () => {
+    if (parseInt(player.wallet) >= parseInt(selectedBait.bait.price)){        
         const request = {
             bait: selectedBait.bait.id
         }
@@ -47,7 +48,7 @@ export const ShopModal = () => {
                 setTackleBox(res)
                 return getPlayer()}).then(
                     (res) => setPlayer(res)
-                )
+                )}
     }
 
     const sell = () => {
