@@ -16,11 +16,11 @@ export default function Location() {
     const router = useRouter()
     const { id } = router.query
 
-    const { token, currentLocation, setCurrentLocation,showPlayerInventory,showTackleBox } = useAppContext()
+    const { token,locations, setCurrentLocation,showPlayerInventory,showTackleBox,setBackgroundPath } = useAppContext()
 
     useEffect(() => {
         setCurrentLocation(id)  
-      },[])
+      },[locations])
 
     if (token) {
 

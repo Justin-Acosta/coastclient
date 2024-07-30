@@ -9,7 +9,7 @@ export const PlayerProfile = () => {
 
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const { token, setToken, player, setPlayer,currentBait } = useAppContext()
+    const { token, setToken, player, setPlayer, currentBait } = useAppContext()
 
     const toggleExpansion = () => {
         setIsExpanded(!isExpanded);
