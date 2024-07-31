@@ -29,14 +29,11 @@ Index.getLayout = function getLayout(page) {
       <LocationsBar />
       <div className='rightContainer'>
         <div className='mainContainer'>
-
           <PlayerProfile />
           {page}
-
         </div>
         <Items />
       </div>
-
     </Layout>
 
 

@@ -11,7 +11,7 @@ export const ShopModal = () => {
     const [showBuy, setShowBuy] = useState(true)
     const [showSell, setShowSell] = useState(false)
 
-    const { shopInventory,tackleBox, setTackleBox, playerInventory, setPlayerInventory, setPlayer, player } = useAppContext()
+    const { shopInventory, tackleBox, setTackleBox, playerInventory, setPlayerInventory, setPlayer, player } = useAppContext()
 
     const selectBait = (e) => {
         const foundBait = shopInventory.find((bait) => bait.bait.id === parseInt(e.currentTarget.id))
@@ -21,7 +21,7 @@ export const ShopModal = () => {
     const baitQuantity = (shopBait) => {
         const foundBait = tackleBox.find((tackleBait) => tackleBait.bait?.id === shopBait.bait?.id)
         return foundBait?.quantity
-    } 
+    }
 
     const selectFish = (e) => {
         const foundFish = playerInventory.find((fish) => fish.fish.id === parseInt(e.currentTarget.id))
@@ -39,28 +39,40 @@ export const ShopModal = () => {
     }
 
     const buy = () => {
-    if (parseInt(player.wallet) >= parseInt(selectedBait.bait.price)){        
-        const request = {
-            bait: selectedBait.bait.id
-        }
-        purchaseBait(request).then(
-            (res) => {
-                setTackleBox(res)
-                return getPlayer()}).then(
+        if (parseInt(player.wallet) >= parseInt(selectedBait.bait.price)) {
+            const request = {
+                bait: selectedBait.bait.id
+            }
+            purchaseBait(request).then(
+                (res) => {
+                    setTackleBox(res)
+                    return getPlayer()
+                }).then(
                     (res) => setPlayer(res)
-                )}
+                )
+        }
     }
 
     const sell = () => {
+
         const request = {
             fish: selectedFish.fish.id
         }
         sellFish(request).then(
             (res) => {
                 setPlayerInventory(res)
-                return getPlayer()}).then(
-                    (res) => setPlayer(res)
-                )
+                if (res.some((inventoryFish) => inventoryFish.fish.id == selectedFish.fish.id)){
+                }
+                else {
+                    setSelectedFish(false)
+                }
+                return getPlayer()
+            }).then(
+                (res) => {
+                    setPlayer(res)
+                }
+            )
+
     }
 
     return (

@@ -36,8 +36,8 @@ export const TackleBox = () => {
     return (
         <div className='modalWindow'>
 
-            <div></div>
             <div className={styles.topBar}> 
+                <div className={styles.title}>tackle box</div>
                 <div className={styles.exit} onClick={toggleShowTackleBox}>✖</div>
             </div>
 

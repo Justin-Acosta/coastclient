@@ -44,6 +44,7 @@ export const PlayerInventory = () => {
                         <option value={type.id} key={type.id}>{type.name}</option>
                     )}
                 </select>
+                <div className={styles.title}>inventory</div>
                 <div className={styles.exit} onClick={toggleShowInventory}>✖</div>
             </div>
 

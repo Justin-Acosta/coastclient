@@ -2,10 +2,13 @@ import styles from '../styles/player-profile.module.css'
 import { useAppContext } from '../context/state.js';
 import { useState } from 'react';
 import { updatePlayer } from '@/data/player.js';
+import { useRouter } from 'next/router.js';
 
 
 
 export const PlayerProfile = () => {
+
+    const router = useRouter()
 
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -24,6 +27,7 @@ export const PlayerProfile = () => {
         localStorage.removeItem('token')
         setIsExpanded(false)
         setToken(null)
+        router.push('/')
     }
 
     if (token) {

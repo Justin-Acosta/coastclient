@@ -9,7 +9,7 @@ export const FishModal = ({caughtFish,setShowCaughtFish}) => {
     const { tackleBox, setShowTackleBox, showPlayerInventory, currentBait, setCurrentBait,setPlayerInventory } = useAppContext()
 
     const throwBack = () => {
-        if (currentBait.quantity -= 1 == 0) {
+        if (currentBait.quantity - 1 == 0) {
             setCurrentBait(false)
         }
         else {
@@ -20,9 +20,10 @@ export const FishModal = ({caughtFish,setShowCaughtFish}) => {
 
     const keep = () => {
         keepFish({fish:caughtFish.id}).then(() => {
+
             return getPlayerInventory()
         }).then((res) => setPlayerInventory(res)).then(() =>{
-            if (currentBait.quantity -= 1 == 0) {
+            if (currentBait.quantity - 1 == 0) {
                 setCurrentBait(false)
             }
             else {
