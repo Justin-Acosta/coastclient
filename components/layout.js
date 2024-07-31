@@ -5,15 +5,11 @@ export default function Layout({ children }) {
 
   
   return (
-
-
       <AppWrapper>
         <Head>
           <title>Coast</title>
         </Head>
         <main className="container">{children}</main>
       </AppWrapper>
-
-
   )
 }

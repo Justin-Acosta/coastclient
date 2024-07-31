@@ -7,7 +7,7 @@ export const LocationsBar = () => {
 
     const router = useRouter()
 
-    const { token,player,setPlayer,locations } = useAppContext()
+    const { token,player,setPlayer,locations,setCurrentLocation } = useAppContext()
 
     const [isExpanded, setIsExpanded] = useState(true);
 
@@ -24,7 +24,7 @@ export const LocationsBar = () => {
     }
 
     const goToLocation = (e) => {
-
+        setCurrentLocation(parseInt(e.currentTarget.id))
         router.push(`/location/${parseInt(e.currentTarget.id)}`)
     }
 

@@ -9,9 +9,8 @@ export const Background = () => {
     const [backgroundPath,setBackgroundPath] = useState()
 
     const router = useRouter()
-    const {id} = router.query
 
-    const { token,player,locations, currentLocation,setCurrentLocation } = useAppContext()
+    const { locations, currentLocation } = useAppContext()
 
     useEffect(() => {
         if (currentLocation) {
@@ -22,7 +21,7 @@ export const Background = () => {
                 setBackgroundPath('http://localhost:8000/media/location/shop.gif')
             }
             else {
-                const foundLocation = locations.find((loc) => loc.id = parseInt(currentLocation))
+                const foundLocation = locations.find((loc) => loc.id === currentLocation)
                 setBackgroundPath(`http://localhost:8000/${foundLocation?.image}`)
             }
         }

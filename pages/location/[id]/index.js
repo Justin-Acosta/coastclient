@@ -20,13 +20,9 @@ export default function Location() {
     
 
     const router = useRouter()
-    const { id } = router.query
 
-    const { token,locations, setCurrentBait, setTackleBox, setCurrentLocation,showPlayerInventory,showTackleBox, currentLocation, currentBait } = useAppContext()
 
-    useEffect(() => {
-        setCurrentLocation(id)  
-      },[locations])
+    const { token,setTackleBox, showPlayerInventory,showTackleBox, currentLocation, currentBait } = useAppContext()
 
     const castPole = () => {
         const requestObject = {
