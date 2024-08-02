@@ -12,17 +12,24 @@ import { TackleBox } from '@/components/tackle-box.js';
 import { FishModal } from '@/components/fish-modal.js';
 import { catchFish } from '@/data/locations.js';
 import { getTackleBox } from '@/data/player.js';
+import Link from 'next/link.js';
 
 export default function Location() {
 
     const [caughtFish,setCaughtFish] = useState(false)
     const [showCaughtFish,setShowCaughtFish] = useState(false)
     
-
     const router = useRouter()
 
+    const { id } = router.query
 
-    const { token,setTackleBox, showPlayerInventory,showTackleBox, currentLocation, currentBait } = useAppContext()
+    const { token,setTackleBox, showPlayerInventory,showTackleBox, currentLocation, setCurrentLocation, currentBait } = useAppContext()
+
+    useEffect(() => {
+        if (id) {
+            setCurrentLocation(id)
+        }
+    },[id])
 
     const castPole = () => {
         const requestObject = {
@@ -54,6 +61,15 @@ export default function Location() {
                 {showPlayerInventory ? <PlayerInventory/>: <></>}
                 {showTackleBox ? <TackleBox/>: <></>}
             </div>
+        )
+    }
+
+    else {
+        return (
+            <div className={styles.locationContainer}>
+                <Link href={'/'} className='backToHome'>Back to Home</Link>
+            </div>
+
         )
     }
 }

@@ -24,7 +24,7 @@ export const LocationsBar = () => {
     }
 
     const goToLocation = (e) => {
-        setCurrentLocation(parseInt(e.currentTarget.id))
+        // setCurrentLocation(parseInt(e.currentTarget.id))
         router.push(`/location/${parseInt(e.currentTarget.id)}`)
     }
 

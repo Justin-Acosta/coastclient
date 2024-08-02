@@ -53,7 +53,7 @@
     scrollbar-width: none;
 
     .box{
-        width: 6rem;
+        width: 6.1rem;
         height: 7rem;
         margin: .5rem;
         border-radius: .5rem;
@@ -94,10 +94,11 @@
     height: 6rem;
     min-height: 6rem;
     width: 100%;
+    text-wrap: none;
 
 
     .column {
-        width: 100%;
+        flex-grow: 1;
         margin: .5rem;
         margin-left: 1rem;
 

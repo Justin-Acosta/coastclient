@@ -21,11 +21,11 @@ export const Background = () => {
                 setBackgroundPath('http://localhost:8000/media/location/shop.gif')
             }
             else {
-                const foundLocation = locations.find((loc) => loc.id === currentLocation)
+                const foundLocation = locations.find((loc) => loc.id === parseInt(currentLocation))
                 setBackgroundPath(`http://localhost:8000/${foundLocation?.image}`)
             }
         }
-    },[currentLocation])
+    },[currentLocation, locations])
 
     return (
                 <div 

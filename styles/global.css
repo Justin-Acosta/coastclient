@@ -81,3 +81,25 @@ input {
     align-items: center;
     overflow: hidden;
 }
+
+.backToHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 8rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    font-family: 'pixel_digivolve';
+    border-radius: .6rem;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+.backToHome:hover {
+    background-color: rgb(210, 210, 210);
+}
+
