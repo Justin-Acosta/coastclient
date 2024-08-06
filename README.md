@@ -33,11 +33,11 @@ Coast is a fishing app where the user can buy bait, travel to locations, catch u
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-*JavaScript
-*React
-*Next.js
-*Python
-*Django
+-JavaScript
+-React
+-Next.js
+-Python
+-Django
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
