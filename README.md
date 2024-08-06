@@ -33,16 +33,16 @@ Coast is a fishing app where the user can buy bait, travel to locations, catch u
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
--JavaScript
--React
--Next.js
--Python
--Django
+- JavaScript
+- React
+- Next.js
+- Python
+- Django
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
-1. Navigate to the api repository for this project and follow the instructions in the readme: https://github.com/Justin-Acosta/coast-project
+Navigate to the api repository for this project and follow the instructions in the readme: https://github.com/Justin-Acosta/coast-project
 
 ### Prerequisites
 *Node.js 18.17 or later
