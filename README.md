@@ -45,8 +45,8 @@ Coast is a fishing app where the user can buy bait, travel to locations, catch u
 Navigate to the api repository for this project and follow the instructions in the readme: https://github.com/Justin-Acosta/coast-api
 
 ### Prerequisites
-*Node.js 18.17 or later
-*Next.js
+- Node.js 18.17 or later
+- Next.js
 
 ### Installation
 1. Clone this repository from Github
