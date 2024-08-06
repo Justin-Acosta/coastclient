@@ -2,7 +2,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">Coast</h3>
+<h1 align="center">Coast</h1>
   <p align="center">
     <a>email: jacostaprof@gmail.com<a/>
     <br />
@@ -40,8 +40,6 @@
 Coast is a fishing app where the user can buy bait, travel to locations, catch unique fish and sell thier catch!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ### Built With
 *JavaScript
 *React
@@ -50,12 +48,12 @@ Coast is a fishing app where the user can buy bait, travel to locations, catch u
 *Django
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+1. Navigate to the api repository for this project and follow the instructions in the readme: https://github.com/Justin-Acosta/coast-project
+2. Clone this repository from Github
+3. Run ```npm run dev```
+4. Run navigate to localhost:3000 in your browser
 
 ### Prerequisites
 
