@@ -1,22 +1,13 @@
 <a id="readme-top"></a>
-
-
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
 
-
 <h3 align="center">Coast</h3>
-
   <p align="center">
-    <br />
-    <br />
+    <a>email: jacostaprof@gmail.com<a/>
     <br />
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
