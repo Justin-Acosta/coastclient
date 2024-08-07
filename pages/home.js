@@ -8,16 +8,23 @@ import { TackleBox } from '@/components/tackle-box.js';
 
 export const Home = () => {
 
-    const { token,setCurrentLocation, showPlayerInventory, showTackleBox } = useAppContext()
+    const { token,setCurrentLocation, showPlayerInventory, setShowPlayerInventory, showTackleBox, setShowTackleBox } = useAppContext()
 
     useEffect(() => {
-      setCurrentLocation('title')  
+      setCurrentLocation('title')
     },[])
+
+    useEffect(() => {
+      if (token !== true) {
+        setShowPlayerInventory(false)
+        setShowTackleBox(false)
+      }
+    },[token])
 
     return (
 
                     <div className={styles.homeContainer}>
-                        {showPlayerInventory || showTackleBox? <></> : <div className={styles.title}>Coast</div>}
+                        {showPlayerInventory || showTackleBox ? <></> : <div className={styles.title}>Coast</div>}
                         {token ? <></>: <Login />}
                         {showPlayerInventory ? <PlayerInventory/>: <></>}
                         {showTackleBox ? <TackleBox/>: <></>}
