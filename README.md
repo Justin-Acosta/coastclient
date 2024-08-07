@@ -51,7 +51,7 @@ Navigate to the api repository for this project and follow the instructions in t
 ### Installation
 1. Clone this repository from Github
 2. Run ```npm run dev```
-3. Run navigate to ```localhost:3000``` in your browser
+3. Navigate to ```localhost:3000``` in your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
