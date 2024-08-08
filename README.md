@@ -29,7 +29,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Coast is a fishing app where the user can buy bait, travel to locations, catch unique fish and sell thier catch!
+Coast is a fishing app where the user can buy bait, travel to locations, catch unique fish and sell their catch!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
