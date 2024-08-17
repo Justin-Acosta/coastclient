@@ -8,6 +8,8 @@ import { useRouter } from 'next/router.js';
 
 export const PlayerProfile = () => {
 
+    const API_URL = "http://coastapi-3odjm.ondigitalocean.app"
+
     const router = useRouter()
 
     const [isExpanded, setIsExpanded] = useState(false);
@@ -41,7 +43,7 @@ export const PlayerProfile = () => {
                     </div>
                     <div
                         className={styles.image}
-                        style={{ backgroundImage: `url('http://localhost:8000/${currentBait.bait?.image}')` }}
+                        style={{ backgroundImage: `url('http://${API_URL}/${currentBait.bait?.image}')` }}
                     ></div>
                 </div> : <></>}
 

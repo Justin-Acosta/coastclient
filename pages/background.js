@@ -6,16 +6,16 @@ import { useState,useEffect } from 'react';
 
 export const Background = () => {
 
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+    const API_URL = "http://coastapi-3odjm.ondigitalocean.app"
 
     const [backgroundPath,setBackgroundPath] = useState()
 
     const router = useRouter()
 
-    const { locations, currentLocation } = useAppContext()
+    const { locations, currentLocation } = useAppContext() || {}
 
     useEffect(() => {
-        if (currentLocation) {
+        if (currentLocation && locations) {
             if (currentLocation == 'title') {
                 setBackgroundPath(`${API_URL}/media/location/title.gif`)
             }

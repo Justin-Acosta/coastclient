@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 
 export const LocationsBar = () => {
 
+    const API_URL = "http://coastapi-3odjm.ondigitalocean.app"
+
     const router = useRouter()
 
     const { token,player,setPlayer,locations,setCurrentLocation } = useAppContext()
@@ -41,7 +43,7 @@ export const LocationsBar = () => {
                     <div className={styles.text}>Shop</div>
                     <div
                         className={styles.image}
-                        style={{ backgroundImage: `url('http://localhost:8000/media/location/shop.gif')` }}
+                        style={{ backgroundImage: `url('${API_URL}/media/location/shop.gif')` }}
                     ></div>
                 </div>
 
@@ -50,7 +52,7 @@ export const LocationsBar = () => {
                         <div className={styles.text}>{location.name}</div>
                         <div
                             className={styles.image}
-                            style={{ backgroundImage: `url('http://localhost:8000/${location.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}/${location.image}')` }}
                         ></div>
                     </div>
                 ))} 

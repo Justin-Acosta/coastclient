@@ -8,7 +8,7 @@ import { TackleBox } from '@/components/tackle-box.js';
 
 export const Home = () => {
 
-    const { token,setCurrentLocation, showPlayerInventory, setShowPlayerInventory, showTackleBox, setShowTackleBox } = useAppContext()
+    const { token,setCurrentLocation, showPlayerInventory, setShowPlayerInventory, showTackleBox, setShowTackleBox } = useAppContext() || {}
 
     useEffect(() => {
       setCurrentLocation('title')
