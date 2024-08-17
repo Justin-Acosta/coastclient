@@ -9,35 +9,22 @@
     overflow: hidden;
     border-bottom: solid rgb(229, 178, 12);
 
-    .select {
-
-        text-align: center;
-        height: 100%;
-        width: 6rem;
-        border: none;
-        margin-left:.6rem;
-        margin-right: auto;
-        border-radius: .5rem;
-        background-color: white;
-        border: white solid .15rem;
-        font-family: 'pixel_digivolve';
-    }
-    
-    .exit {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-        padding: 1rem 0;
-        width: 3rem;
-        height: 100%;
-        cursor: pointer;
-    }
-    
-    .exit:hover {
-        background-color: rgb(255, 48, 96);
-    }
 }
+
+.select {
+
+    text-align: center;
+    height: 100%;
+    width: 6rem;
+    border: none;
+    margin-left:.6rem;
+    margin-right: auto;
+    border-radius: .5rem;
+    background-color: white;
+    border: white solid .15rem;
+    font-family: 'pixel_digivolve';
+}
+
 
 .displayArea{
     display:flex;
@@ -51,17 +38,17 @@
     overflow: auto;
     scrollbar-width: none;
 
-    .fishImage {
-        width: 8rem;
-        height: 8rem;
-        background-size: 100% 100%;
-        margin: auto 0;
-        border-radius: .5rem;
-        border: solid rgb(253, 231, 152);
-    }
-
+    
 }
 
+.fishImage {
+    width: 8rem;
+    height: 8rem;
+    background-size: 100% 100%;
+    margin: auto 0;
+    border-radius: .5rem;
+    border: solid rgb(253, 231, 152);
+}
 .name {
     display: flex;
     justify-content: space-between;
@@ -82,31 +69,32 @@
     min-height: 6rem;
     width: 100%;
 
+}
 
-    .column {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: .5rem;
-        margin-left: 1rem;
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: .5rem;
+    margin-left: 1rem;
 
-        .name {
-            font-weight: 1000;
-            font-size: 1.2rem;
-        }
 
-        .button {
-            margin-left: auto;
-            margin-top: auto;
-            margin-bottom: 0;
-            background-color: rgb(255, 196, 0);
-            cursor: pointer;
-            margin-top: .5rem;
-        }
+}
 
-        .button:hover {
-            background-color: rgb(255, 207, 48);
-        }
-    }
+.name {
+    font-weight: 1000;
+    font-size: 1.2rem;
+}
 
+.button {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    background-color: rgb(255, 196, 0);
+    cursor: pointer;
+    margin-top: .5rem;
+}
+
+.button:hover {
+    background-color: rgb(255, 207, 48);
 }
