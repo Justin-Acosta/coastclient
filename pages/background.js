@@ -24,7 +24,7 @@ export const Background = () => {
             }
             else {
                 const foundLocation = locations.find((loc) => loc.id === parseInt(currentLocation))
-                setBackgroundPath(`${API_URL}/${foundLocation?.image}`)
+                setBackgroundPath(`${API_URL}${foundLocation?.image}`)
             }
         }
     },[currentLocation, locations])
