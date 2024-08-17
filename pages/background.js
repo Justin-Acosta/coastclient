@@ -6,7 +6,7 @@ import { useState,useEffect } from 'react';
 
 export const Background = () => {
 
-    const API_URL = "http://coastapi-3odjm.ondigitalocean.app"
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const [backgroundPath,setBackgroundPath] = useState()
 

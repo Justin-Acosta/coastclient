@@ -8,7 +8,7 @@ import { useRouter } from 'next/router.js';
 
 export const PlayerProfile = () => {
 
-    const API_URL = "http://coastapi-3odjm.ondigitalocean.app"
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const router = useRouter()
 
