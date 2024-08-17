@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000'
+const API_URL = 'https://coastapi-3odjm.ondigitalocean.app/'
 
 const checkError = (res) => {
   if (!res.ok) {
