@@ -6,6 +6,8 @@ import { useState,useEffect } from 'react';
 
 export const Background = () => {
 
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+
     const [backgroundPath,setBackgroundPath] = useState()
 
     const router = useRouter()
@@ -15,14 +17,14 @@ export const Background = () => {
     useEffect(() => {
         if (currentLocation) {
             if (currentLocation == 'title') {
-                setBackgroundPath('http://localhost:8000/media/location/title.gif')
+                setBackgroundPath(`${API_URL}/media/location/title.gif`)
             }
             else if (currentLocation == 'shop') {
-                setBackgroundPath('http://localhost:8000/media/location/shop.gif')
+                setBackgroundPath(`${API_URL}/media/location/shop.gif`)
             }
             else {
                 const foundLocation = locations.find((loc) => loc.id === parseInt(currentLocation))
-                setBackgroundPath(`http://localhost:8000/${foundLocation?.image}`)
+                setBackgroundPath(`${API_URL}/${foundLocation?.image}`)
             }
         }
     },[currentLocation, locations])
