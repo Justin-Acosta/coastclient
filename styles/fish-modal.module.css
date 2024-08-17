@@ -95,20 +95,18 @@
             font-size: 1.2rem;
         }
 
+        .button {
+            margin-left: auto;
+            margin-top: auto;
+            margin-bottom: 0;
+            background-color: rgb(255, 196, 0);
+            cursor: pointer;
+            margin-top: .5rem;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 207, 48);
+        }
     }
 
-    
-}
-
-.button {
-    margin-left: auto;
-    margin-top: auto;
-    margin-bottom: 0;
-    background-color: rgb(255, 196, 0);
-    cursor: pointer;
-    margin-top: .5rem;
-}
-
-.button:hover {
-    background-color: rgb(255, 207, 48);
 }
