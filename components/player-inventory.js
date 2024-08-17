@@ -4,6 +4,8 @@ import { useAppContext } from '@/context/state.js'
 
 export const PlayerInventory = () => {
 
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+
     const { playerInventory, fishTypes, setShowPlayerInventory } = useAppContext()
 
     const [displayedFish, setDisplayedFish] = useState([])
@@ -57,7 +59,7 @@ export const PlayerInventory = () => {
                         </div>
                         <div
                             className={styles.image}
-                            style={{ backgroundImage: `url('http://localhost:8000/${fish.fish.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}${fish.fish.image}')` }}
                         ></div>
                     </div>
                 )}
