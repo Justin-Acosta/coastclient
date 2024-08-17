@@ -43,7 +43,7 @@ export const PlayerProfile = () => {
                     </div>
                     <div
                         className={styles.image}
-                        style={{ backgroundImage: `url('http://${API_URL}/${currentBait.bait?.image}')` }}
+                        style={{ backgroundImage: `url('${API_URL}/${currentBait.bait?.image}')` }}
                     ></div>
                 </div> : <></>}
 

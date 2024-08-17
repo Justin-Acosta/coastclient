@@ -6,6 +6,8 @@ import { getPlayerInventory, getTackleBox } from '@/data/player.js'
 
 export const FishModal = ({caughtFish,setShowCaughtFish}) => {
 
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+
     const { tackleBox, setShowTackleBox, showPlayerInventory, currentBait, setCurrentBait,setPlayerInventory } = useAppContext()
 
     const throwBack = () => {
@@ -44,7 +46,7 @@ export const FishModal = ({caughtFish,setShowCaughtFish}) => {
                 <div className={styles.name}>You caught a {caughtFish.name} !</div>
                 <div 
                 className={styles.fishImage}
-                style={{ backgroundImage: `url('http://localhost:8000/${caughtFish?.image}')` }}
+                style={{ backgroundImage: `url('${API_URL}${caughtFish?.image}')` }}
                 ></div>
             </div>
 
