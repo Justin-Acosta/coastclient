@@ -52,7 +52,7 @@ export const LocationsBar = () => {
                         <div className={styles.text}>{location.name}</div>
                         <div
                             className={styles.image}
-                            style={{ backgroundImage: `url('${API_URL}/${location.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}${location.image}')` }}
                         ></div>
                     </div>
                 ))} 
