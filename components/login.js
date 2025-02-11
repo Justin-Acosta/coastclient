@@ -6,7 +6,7 @@ import Link from 'next/link.js';
 
 export default function Login() {
 
-    const { setToken } = useAppContext()
+    const { setToken } = useAppContext() || {}
 
     const [loginData, setLoginData] = useState({ username: '', password: '' })
     const [registerData, setRegisterData] = useState(

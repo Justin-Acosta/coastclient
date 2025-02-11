@@ -9,7 +9,7 @@ const AppContext = createContext();
 
 export function AppWrapper({ children }) {
 
-  const [token, setToken] = useState("")
+  const [token, setToken] = useState(false)
   const [player, setPlayer] = useState({})
   const [tackleBox, setTackleBox] = useState([])
   const [playerInventory, setPlayerInventory] = useState([])
@@ -74,7 +74,6 @@ export function AppWrapper({ children }) {
       fishTypes,
       currentLocation,
       currentBait,
-      tackleBox,
       showTackleBox,
       showPlayerInventory,
       setToken, 

@@ -4,6 +4,8 @@ import { useAppContext } from '@/context/state.js'
 
 export const TackleBox = () => {
 
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+
     const [selectedBait,setSelectedBait] = useState(false)
 
     const { tackleBox, setShowTackleBox, currentBait, setCurrentBait } = useAppContext()
@@ -50,7 +52,7 @@ export const TackleBox = () => {
                         </div>
                         <div 
                             className={styles.image}
-                            style={{ backgroundImage: `url('http://localhost:8000/${bait.bait.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}${bait.bait.image}')` }}
                         ></div>
                     </div>
                 )}

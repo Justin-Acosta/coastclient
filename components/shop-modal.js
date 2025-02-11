@@ -6,6 +6,8 @@ import { getPlayer } from '@/data/player.js'
 
 export const ShopModal = () => {
 
+    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
+
     const [selectedBait, setSelectedBait] = useState(false)
     const [selectedFish, setSelectedFish] = useState(false)
     const [showBuy, setShowBuy] = useState(true)
@@ -94,7 +96,7 @@ export const ShopModal = () => {
                         </div>
                         <div
                             className={styles.image}
-                            style={{ backgroundImage: `url('http://localhost:8000/${bait.bait.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}${bait.bait.image}')` }}
                         ></div>
                     </div>
                 )}
@@ -109,7 +111,7 @@ export const ShopModal = () => {
                         </div>
                         <div
                             className={styles.image}
-                            style={{ backgroundImage: `url('http://localhost:8000/${fish.fish.image}')` }}
+                            style={{ backgroundImage: `url('${API_URL}${fish.fish.image}')` }}
                         ></div>
                     </div>
                 )}

@@ -29,7 +29,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Coast is a fishing app where the user can buy bait, travel to locations, catch unique fish and sell thier catch!
+Coast is a fishing app where the user can buy bait, travel to locations, catch unique fish and sell their catch!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
@@ -46,12 +46,14 @@ Navigate to the api repository for this project and follow the instructions in t
 
 ### Prerequisites
 - Node.js 18.17 or later
-- Next.js
+- npm
 
 ### Installation
 1. Clone this repository from Github
-2. Run ```npm run dev```
-3. Run navigate to ```localhost:3000``` in your browser
+2. Navigate to the coastclient directory
+3. Run ```npm install```
+4. Run ```npm run dev```
+5. Navigate to ```localhost:3000``` in your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
