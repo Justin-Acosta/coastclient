@@ -35,7 +35,5 @@ Index.getLayout = function getLayout(page) {
         <Items />
       </div>
     </Layout>
-
-
   )
 }
