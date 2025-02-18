@@ -2,10 +2,9 @@ import styles from '../styles/items.module.css'
 import { useState, useEffect } from 'react'
 import { useAppContext } from '@/context/state.js'
 import { PlayerInventory } from './player-inventory.js'
+import { API_URL } from '@/data/fetcher'
 
 export const Items = () => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const { token, showPlayerInventory, setShowPlayerInventory, showTackleBox, setShowTackleBox, currentBait } = useAppContext()
 

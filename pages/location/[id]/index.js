@@ -13,6 +13,7 @@ import { FishModal } from '@/components/fish-modal.js';
 import { catchFish } from '@/data/locations.js';
 import { getTackleBox } from '@/data/player.js';
 import Link from 'next/link.js';
+import { API_URL } from '@/data/fetcher';
 
 export default function Location() {
 
@@ -53,7 +54,10 @@ export default function Location() {
                     <div className={styles.catchingContainer}>
                         {currentBait ? <>{showCaughtFish ? 
                         <FishModal caughtFish={caughtFish} setShowCaughtFish={setShowCaughtFish}/> :
-                        <div className={styles.fishCatchingBox} onClick={castPole}></div>
+                        <div 
+                            className={styles.fishCatchingBox} 
+                            onClick={castPole}
+                            style={{cursor: `url('${API_URL}/media/assets/fishing_rod.png'),pointer`}}></div>
                         }</> :
                         <div className={styles.selectBait}>select a bait</div>}
                     </div>

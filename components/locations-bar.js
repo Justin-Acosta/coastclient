@@ -2,10 +2,9 @@ import styles from '../styles/locations-bar.module.css'
 import { useAppContext } from '../context/state.js';
 import { useState,useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { API_URL } from '@/data/fetcher';
 
 export const LocationsBar = () => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const router = useRouter()
 

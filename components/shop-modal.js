@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react'
 import { useAppContext } from '@/context/state.js'
 import { purchaseBait, sellFish } from '@/data/shop.js'
 import { getPlayer } from '@/data/player.js'
+import { API_URL } from '@/data/fetcher'
 
 export const ShopModal = () => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const [selectedBait, setSelectedBait] = useState(false)
     const [selectedFish, setSelectedFish] = useState(false)

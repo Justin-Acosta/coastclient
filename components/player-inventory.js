@@ -1,10 +1,9 @@
 import styles from '../styles/player-inventory.module.css'
 import { useState, useEffect } from 'react'
 import { useAppContext } from '@/context/state.js'
+import { API_URL } from '@/data/fetcher'
 
 export const PlayerInventory = () => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const { playerInventory, fishTypes, setShowPlayerInventory } = useAppContext()
 
