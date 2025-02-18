@@ -1,4 +1,4 @@
-const API_URL = 'https://coastapi-3odjm.ondigitalocean.app'
+export const API_URL = 'http://127.0.0.1:8000'
 
 const checkError = (res) => {
   if (!res.ok) {
@@ -14,7 +14,6 @@ const checkErrorJson = (res) => {
     return res.json()
   }
 }
-
 
 const catchError = (err) => {
   if (err.message === '401') {

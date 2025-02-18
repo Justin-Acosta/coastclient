@@ -3,10 +3,9 @@ import { useState,useEffect } from 'react'
 import { useAppContext } from '@/context/state.js'
 import { keepFish } from '@/data/locations.js'
 import { getPlayerInventory, getTackleBox } from '@/data/player.js'
+import { API_URL } from '@/data/fetcher'
 
 export const FishModal = ({caughtFish,setShowCaughtFish}) => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const { tackleBox, setShowTackleBox, showPlayerInventory, currentBait, setCurrentBait,setPlayerInventory } = useAppContext()
 
