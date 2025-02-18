@@ -1,4 +1,10 @@
-export const API_URL = 'http://127.0.0.1:8000'
+export let API_URL = ''
+
+if (process.env.NODE_ENV === 'development') {
+  API_URL = 'http://127.0.0.1:8000'
+} else if (process.env.NODE_ENV === 'production') {
+  API_URL = ''
+}
 
 const checkError = (res) => {
   if (!res.ok) {

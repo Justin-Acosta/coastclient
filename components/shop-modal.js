@@ -62,7 +62,7 @@ export const ShopModal = () => {
         sellFish(request).then(
             (res) => {
                 setPlayerInventory(res)
-                if (res.some((inventoryFish) => inventoryFish.fish.id == selectedFish.fish.id)){
+                if (res.some((inventoryFish) => inventoryFish.fish.id == selectedFish.fish.id)) {
                 }
                 else {
                     setSelectedFish(false)
@@ -81,8 +81,16 @@ export const ShopModal = () => {
 
             <div></div>
             <div className={styles.topBar}>
-                <div className={styles.buy} onClick={showBuyMenu}>Buy</div>
-                <div className={styles.sell} onClick={showSellMenu}>Sell</div>
+                <div
+                    className={styles.buy}
+                    onClick={showBuyMenu}
+                    style={showBuy ? { backgroundColor: 'rgb(229, 178, 12)' } : { backgroundColor: 'rgb(249, 206, 66)' }}
+                >Buy</div>
+                <div
+                    className={styles.sell}
+                    onClick={showSellMenu}
+                    style={showSell ? { backgroundColor: 'rgb(229, 178, 12)' } : { backgroundColor: 'rgb(249, 206, 66)' }}
+                >Sell</div>
 
             </div>
 

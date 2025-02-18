@@ -18,10 +18,6 @@ export default function Index() {
 
 Index.getLayout = function getLayout(page) {
 
-
-  if (true) {
-    console.log('fart')
-  }
   return (
 
     <Layout>
