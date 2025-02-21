@@ -1,4 +1,10 @@
-const API_URL = 'https://coastapi-3odjm.ondigitalocean.app'
+export let API_URL = ''
+
+if (process.env.NODE_ENV === 'development') {
+  API_URL = 'http://127.0.0.1:8000'
+} else if (process.env.NODE_ENV === 'production') {
+  API_URL = ''
+}
 
 const checkError = (res) => {
   if (!res.ok) {
@@ -14,7 +20,6 @@ const checkErrorJson = (res) => {
     return res.json()
   }
 }
-
 
 const catchError = (err) => {
   if (err.message === '401') {

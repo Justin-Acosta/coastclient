@@ -2,11 +2,10 @@ import styles from '../styles/background.module.css';
 import { useRouter } from 'next/router.js';
 import { useAppContext } from '../context/state.js';
 import { useState,useEffect } from 'react';
+import { API_URL } from '@/data/fetcher';
 
 
 export const Background = () => {
-
-    const API_URL = "https://coastapi-3odjm.ondigitalocean.app"
 
     const [backgroundPath,setBackgroundPath] = useState()
 
